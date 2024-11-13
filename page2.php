@@ -2,8 +2,7 @@
 
 include_once "admin/form_class.php";
 
-$from = new Form();
-
+$form = new Form();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +13,41 @@ $from = new Form();
     <title>Trang 2</title>
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <style>
+        .btn-bottom {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .submit-btn,
+
+        .data-to-database {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.3rem;
+            height: 50px;
+            width: 150px;
+            border-radius: 5px;
+            background: #ccc;
+            color: #050;
+            transition: all .5s linear;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            border: none;
+            margin-right: 10px;
+        }
+
+        .submit-btn:hover,
+
+        .data-to-database:hover {
+            background: #fff;
+            color: #040;
+        }
+    </style>
 </head>
 
 <body>
@@ -184,7 +218,15 @@ $from = new Form();
                         </table>
                     </li>
                 </ol>
-                <button type="submit">Đăng ký</button>
+                <div class="btn-bottom">
+                    <button class="submit-btn" type="submit">Đăng ký</button>
+                    <a class="data-to-database"
+                        href="http://localhost/layDuLieu/page1.php?mess='Chúc mừng bạn thêm thành công dữ liệu vào database'">Thêm
+                    </a>
+                    <a style="width: 250px; margin-left: 15px;" class="data-to-database"
+                        href="http://localhost/layDuLieu/list-info.php">Xem
+                        database</a>
+                </div>
             </form>
         </div>
     </div>

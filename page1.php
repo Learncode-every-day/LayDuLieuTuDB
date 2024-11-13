@@ -1,4 +1,11 @@
 <?php
+
+if (isset($_GET['mess'])) {
+    $mess = $_GET['mess'];
+    // addslashes() là một hàm trong PHP dùng để thêm dấu gạch chéo ngược (\) vào trước các ký tự đặc biệt trong chuỗi, giúp chuỗi an toàn hơn khi sử dụng trong các ngữ cảnh cần trích dẫn như SQL hoặc JavaScript.
+    echo "<script type='text/javascript'>alert('" . addslashes($mess) . "');</script>";
+}
+
 include './admin/form_class.php';
 session_start();
 $form = new Form();
@@ -127,7 +134,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     <select name="day" id="">
                                         <option value="#">--Chọn ngày--</option>
                                         <?php
-                                        $start = 1;
                                         for ($i = 1; $i <= 31; $i++) {
                                             echo "<option value='" . $i . "'>" . $i . "</option>";
                                         }
@@ -240,7 +246,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </table>
                     </li>
                 </ol>
-                <button type="submit">Đăng ký</button>
+                <button class="submit-btn" type="submit">Đăng ký</button>
             </form>
         </div>
     </div>
